@@ -2,19 +2,26 @@
 
 int main()
 {
-    int n1, n2, min, i = 0;
-    int res = 1;
+    int n1, n2, min, i, res, max = 0;
     printf("Enter two numbers to find GCD.");
     scanf("%d %d", &n1, &n2);
     min = n1 > n2 ? n2 : n1;
-    for (i = min; i > 1; i--)
+    if (min != 0)
     {
-        if (n1 % i == 0 && n2 % i == 0)
+        for (i = min; i >= 1; i--)
         {
-            res = i;
-            break;
+            if (n1 % i == 0 && n2 % i == 0)
+            {
+                res = i;
+                break;
+            }
         }
+        printf("GCD of %d and %d is %d", n1, n2, res);
     }
-    printf("GCD of %d and %d is %d", n1, n2, res);
+    else
+    {
+        max = n1 < n2 ? n2 : n1;
+        printf("GCD of %d and %d is %d", n1, n2, max);
+    }
     return 0;
 }
