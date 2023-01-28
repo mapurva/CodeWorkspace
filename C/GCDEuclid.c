@@ -1,6 +1,7 @@
 #include <stdio.h>
 int main()
 {
+    // gcd(a,b)=gcd(b, a%b)
     int a, b, t = 0;
     scanf("%d %d", &a, &b);
     // ensure a is larger
@@ -19,6 +20,6 @@ int main()
         b = t % b;
     }
     printf("%d\n", a);
-    
+
     return 0;
 }
